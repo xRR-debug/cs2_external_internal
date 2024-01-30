@@ -14,6 +14,13 @@
 1. Head over to the [releases page](https://github.com/insage1337/angeldancycs2/releases)
 2. Download the latest binaries
 
+## Building from source
+1. Download [freetype](https://github.com/freetype/freetype)
+2. Include to project
+3. Open vs, select release x64, click build
+4. Nicee
+
+
 ### Usage
 1. Run `cs2.exe`
 2. Run `release.exe`
