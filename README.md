@@ -35,7 +35,7 @@
 <h1 align="center">Features</h1>
 
 #### Legitbot
-- Aimbot using SonyDriverHelper.lib
+- Aimbot using SonyDriverHelper.lib(yaml-cpp.lib)
 - Fov
 - Smooth
 - Hitbox
