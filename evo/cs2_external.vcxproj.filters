@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="utils\os-imgui\imgui\imconfig.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\imgui\imgui.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\imgui\imgui_impl_dx11.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\imgui\imgui_impl_win32.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\imgui\imgui_internal.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\imgui\imstb_rectpack.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\imgui\imstb_textedit.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\imgui\imstb_truetype.h">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\os-imgui.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\os-imgui_base.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\os-imgui_exception.hpp">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\os-imgui_external.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\os-imgui\os-imgui_struct.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\memory\processmanager.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\view.hpp">
+      <Filter>Cheats\View</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\entity.h">
+      <Filter>Cheats\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="core\ctx\ctx.h">
+      <Filter>Cheats\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="hacks\ctx\hacks_ctx.h">
+      <Filter>Cheats</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\bone.h">
+      <Filter>Cheats\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\render\render.hpp">
+      <Filter>Cheats</Filter>
+    </ClInclude>
+    <ClInclude Include="hacks\features\aimbot\aimbot.hpp">
+      <Filter>Cheats</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\offsets\offsets.h">
+      <Filter>Cheats\Offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="hacks\features\radar\radar.h">
+      <Filter>Cheats\Radar</Filter>
+    </ClInclude>
+    <ClInclude Include="hacks\features\triggerbot\triggerbot.h">
+      <Filter>Cheats</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="framework\cfg\configmenu.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\globals\globalvars.h" />
+    <ClInclude Include="utils\format.h" />
+    <ClInclude Include="hacks\features\misc\bunnyhop.hpp" />
+    <ClInclude Include="sdk\globals\globals.hpp" />
+    <ClInclude Include="hacks\features\menu\font\fontarray.h" />
+    <ClInclude Include="Font\IconsFontAwesome6.h" />
+    <ClInclude Include="hacks\features\menu\font\iconsfontwwesome5.h" />
+    <ClInclude Include="hacks\features\visuals\esp.h" />
+    <ClInclude Include="hacks\features\menu\gui.h" />
+    <ClInclude Include="hacks\features\menu\weaponicon.h" />
+    <ClInclude Include="framework\resources\weaponicon.h" />
+    <ClInclude Include="hacks\features\misc\bombtimer.h" />
+    <ClInclude Include="hacks\features\misc\misc.h" />
+    <ClInclude Include="utils\os-imgui\stb\stb_image.h" />
+    <ClInclude Include="utils\random.h" />
+    <ClInclude Include="hacks\features\rcs\rcs.h" />
+    <ClInclude Include="sdk\animation_system\animation_system.hpp" />
+    <ClInclude Include="inc.hpp" />
+    <ClInclude Include="sdk\memory\handlehijack.h" />
+    <ClInclude Include="utils\xorstr\xorstr.hpp" />
+    <ClInclude Include="utils\os-imgui\bytes.hpp" />
+    <ClInclude Include="utils\os-imgui\custom.hpp" />
+    <ClInclude Include="utils\os-imgui\imgui\imgui_freetype.h" />
+    <ClInclude Include="utils\os-imgui\imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="utils\logging.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\hitsounds.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\render\render_sdk.hpp" />
+    <ClInclude Include="utils\discord\backoff.h" />
+    <ClInclude Include="utils\discord\connection.h" />
+    <ClInclude Include="utils\discord\discord_register.h" />
+    <ClInclude Include="utils\discord\discord_rpc.h" />
+    <ClInclude Include="utils\discord\msg_queue.h" />
+    <ClInclude Include="utils\discord\rpc_connection.h" />
+    <ClInclude Include="utils\discord\serialization.h" />
+    <ClInclude Include="utils\discord\discord_rpc_init.h" />
+    <ClInclude Include="utils\xorstr\FNV1A.h" />
+    <ClInclude Include="utils\lazy.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\cfg\cfg.hpp" />
+    <ClInclude Include="todo.h" />
+    <ClInclude Include="hacks\features\aimbot\mouse.hpp" />
+    <ClInclude Include="core\initsdl.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="utils\os-imgui\imgui\imgui.cpp">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\imgui\imgui_demo.cpp">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\imgui\imgui_draw.cpp">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\imgui\imgui_impl_dx11.cpp">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\imgui\imgui_impl_win32.cpp">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\imgui\imgui_tables.cpp">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\imgui\imgui_widgets.cpp">
+      <Filter>OS-ImGui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\os-imgui.cpp">
+      <Filter>OS-ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\os-imgui_base.cpp">
+      <Filter>OS-ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\os-imgui\os-imgui_exception.cpp">
+      <Filter>OS-ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="core\core.cpp">
+      <Filter>Entry</Filter>
+    </ClCompile>
+    <ClCompile Include="core\ctx\ctx.cpp">
+      <Filter>Cheats\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\classes\entity.cpp">
+      <Filter>Cheats\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="hacks\ctx\hacks_ctx.cpp">
+      <Filter>Cheats</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\classes\bone.cpp">
+      <Filter>Cheats\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\offsets\offsets.cpp">
+      <Filter>Cheats\Offsets</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\memory\processmanager.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="hacks\features\radar\radar.cpp">
+      <Filter>Cheats\Radar</Filter>
+    </ClCompile>
+    <ClCompile Include="hacks\features\triggerbot\triggerbot.cpp">
+      <Filter>Cheats</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\cfg\configmenu.cpp" />
+    <ClCompile Include="sdk\globals\globalvars.cpp" />
+    <ClCompile Include="hacks\features\misc\misc.cpp" />
+    <ClCompile Include="sdk\animation_system\animation_system.cpp" />
+    <ClCompile Include="utils\os-imgui\custom.cpp" />
+    <ClCompile Include="utils\os-imgui\imgui\imgui_freetype.cpp" />
+    <ClCompile Include="utils\os-imgui\imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="utils\logging.cpp" />
+    <ClCompile Include="utils\discord\connection_win.cpp" />
+    <ClCompile Include="utils\discord\discord_register_win.cpp" />
+    <ClCompile Include="utils\discord\discord_rpc.cpp" />
+    <ClCompile Include="utils\discord\rpc_connection.cpp" />
+    <ClCompile Include="utils\discord\serialization.cpp" />
+    <ClCompile Include="utils\discord\discord_rpc_init.cpp" />
+    <ClCompile Include="framework\cfg\cfg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="hacks\features\menu\font\stratum2.ttf" />
+    <Font Include="hacks\features\menu\font\fa-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="cs2_external_rebuild.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cs2_external_rebuild.aps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="utils\yaml-cpp\lib\yaml-cpp.lib" />
+  </ItemGroup>
+</Project>
