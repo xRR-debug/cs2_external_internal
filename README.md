@@ -82,4 +82,4 @@
  
 ## Suggestions
 
-Open an [issue](https://github.com/insage1337/angeldancy/issues) with the title of the suggestion you want to make.
+Open an [issue](https://github.com/insage1337/cs2_external_internal/issues) with the title of the suggestion you want to make.
