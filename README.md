@@ -64,12 +64,12 @@
 
 <details>
   <summary>In Game</summary>
-  <img src=""/>
+  <img src="https://raw.githubusercontent.com/insage1337/cs2_external_internal/main/screenshot.png?token=GHSAT0AAAAAACM6S2F4CCR3STALR6EBL7CUZNYJOMQ"/>
 </details>
 
 <details>
 <summary>Loader</summary>
-  <img src=""/>
+  <img src="https://raw.githubusercontent.com/insage1337/cs2_external_internal/main/loader%20screenshot.png?token=GHSAT0AAAAAACM6S2F4FLXMXH7XDN7FS3RIZNYJOHQ"/>
 </details>
  
 ## Suggestions
