@@ -17,7 +17,7 @@
 ## Building from source
 1. Download [freetype](https://github.com/freetype/freetype)
 2. Include to project
-3. Open vs, select release x64, click build
+3. Select release x64, click build
 4. Nicee
 5. Inject with loadlibrary(prefer), mmap
 
