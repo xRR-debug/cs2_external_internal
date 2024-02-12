@@ -42,9 +42,10 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -74,11 +75,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>rebuild</TargetName>
+    <IncludePath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;C:\Users\admin\OneDrive\Рабочий стол\cs2_external_internal-main\evo\utils\SDL3\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\include;C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\freetype\include</IncludePath>
+    <LibraryPath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;C:\Users\admin\OneDrive\Рабочий стол\cs2_external_internal-main\evo\utils\SDL3\lib;C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\freetype\objs</LibraryPath>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>rebuild</TargetName>
-    <IncludePath>C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\freetype\include</IncludePath>
-    <LibraryPath>C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\freetype\objs</LibraryPath>
+    <IncludePath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;C:\Users\admin\OneDrive\Рабочий стол\cs2_external_internal-main\evo\utils\SDL3\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\include;C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\freetype\include</IncludePath>
+    <LibraryPath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;C:\Users\admin\OneDrive\Рабочий стол\cs2_external_internal-main\evo\utils\SDL3\lib;C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\freetype\objs</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,9 +119,10 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
       <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
@@ -187,7 +192,6 @@
     <ClInclude Include="sdk\offsets\offsets.h" />
     <ClInclude Include="sdk\animation_system\animation_system.hpp" />
     <ClInclude Include="sdk\render\render_sdk.hpp" />
-    <ClInclude Include="todo.h" />
     <ClInclude Include="utils\discord\backoff.h" />
     <ClInclude Include="utils\discord\connection.h" />
     <ClInclude Include="utils\discord\discord_register.h" />
