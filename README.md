@@ -63,7 +63,7 @@
 
 #### Config 
 - Simple config system
-- Config path `documents/angeldancy`
+- Config path `appdata/roaming/angeldancy`
 
 #### Debugging
 - Loader was protected from debugging, debug at your own risk :)
