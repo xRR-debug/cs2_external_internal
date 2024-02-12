@@ -33,7 +33,7 @@ static bool main_loop(LPVOID lpParameter)
 
 		char documentsPath[MAX_PATH];
 
-		if (LI_FN(SHGetFolderPathA).get()(NULL, CSIDL_PERSONAL, NULL, 0, documentsPath) != S_OK)
+		if (LI_FN(SHGetFolderPathA).get()(NULL, CSIDL_APPDATA, NULL, 0, documentsPath) != S_OK)
 		{
 #ifdef DEBUG_CONSOLE
 			Logging::Print(X("[Info] Error: Failed to get the Documents folder path."));
@@ -112,7 +112,7 @@ static bool main_loop(LPVOID lpParameter)
 		try
 		{
 			// Chinese version
-			Gui.AttachAnotherWindow(X("���־�Ӣ��ȫ����"), X("SDL_app"), cheats::run);
+			Gui.AttachAnotherWindow(X("·´¿Ö¾«Ó¢£ºÈ«Çò¹¥ÊÆ"), X("SDL_app"), cheats::run);
 		}
 		catch (OSImGui::OSException& e)
 		{
