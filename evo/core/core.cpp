@@ -112,7 +112,7 @@ static bool main_loop(LPVOID lpParameter)
 		try
 		{
 			// Chinese version
-			Gui.AttachAnotherWindow(X("·´¿Ö¾«Ó¢£ºÈ«Çò¹¥ÊÆ"), X("SDL_app"), cheats::run);
+			Gui.AttachAnotherWindow(X("反恐精英：全球攻势"), X("SDL_app"), cheats::run);
 		}
 		catch (OSImGui::OSException& e)
 		{
