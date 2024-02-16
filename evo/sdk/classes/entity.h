@@ -109,15 +109,25 @@ public:
 	}
 };
 
+class Client
+{
+public:
+	float Sensitivity;
+
+public:
+	bool GetSensitivity();
+};
+
 class CEntity
 {
 public:
 	PlayerController Controller;
 	PlayerPawn Pawn;
+	Client Client;
 public:
 	bool UpdateController(const DWORD64& PlayerControllerAddress);
 	bool UpdatePawn(const DWORD64& PlayerPawnAddress);
-	bool UpdateServerPawn(const DWORD64& PlayerPawnAddress);
+	bool UpdateClientData();
 	bool IsAlive();
 	bool IsInScreen();
 	CBone GetBone() const;
