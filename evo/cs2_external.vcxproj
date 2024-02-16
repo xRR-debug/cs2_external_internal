@@ -81,8 +81,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>rebuild</TargetName>
-    <IncludePath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;C:\Users\admin\OneDrive\Рабочий стол\cs2_external_internal-main\evo\utils\SDL3\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\include;C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\freetype\include</IncludePath>
-    <LibraryPath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;C:\Users\admin\OneDrive\Рабочий стол\cs2_external_internal-main\evo\utils\SDL3\lib;C:\Users\admin\OneDrive\Рабочий стол\cs2external_internal-main\evo\utils\SDL3\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\freetype\objs</LibraryPath>
+    <IncludePath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;C:\Users\admin\OneDrive\Рабочий стол\cs2_external_internal-main\evo\utils\SDL3\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\freetype\include</IncludePath>
+    <LibraryPath>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\atlmfc\lib\x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\freetype\objs</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -169,7 +169,6 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="core\initsdl.hpp" />
     <ClInclude Include="framework\cfg\cfg.hpp" />
     <ClInclude Include="hacks\features\aimbot\aimbot.hpp" />
     <ClInclude Include="hacks\features\aimbot\mouse.hpp" />
