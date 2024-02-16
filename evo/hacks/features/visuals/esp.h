@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../../sdk/render/render.hpp"
 #include "../../framework/cfg/cfg.hpp"
 #include "../../hacks/ctx/hacks_ctx.h"
@@ -123,7 +123,8 @@ namespace ESP
 			if (angel::_settings->filled_vis_box)
 			{
 				if ((Entity.Pawn.bSpottedByMask & (DWORD64(1) << LocalPlayerControllerIndex)) ||
-					(LocalEntity.Pawn.bSpottedByMask & (DWORD64(1) << LocalPlayerControllerIndex))) {
+					(LocalEntity.Pawn.bSpottedByMask & (DWORD64(1) << Index))) 
+				{
 
 					Gui.RectangleFilled({ Rect.x, Rect.y }, { Rect.z, Rect.w }, FlatBoxVisCol, Rounding);
 				}
@@ -210,6 +211,21 @@ namespace ESP
 				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 15.0f, ImVec2{ textPosition.x + 1, textPosition.y + 1 }, ImColor(0, 0, 0, 255), weaponIcon.c_str());
 				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 15.0f, ImVec2{ textPosition.x + 1, textPosition.y - 1 }, ImColor(0, 0, 0, 255), weaponIcon.c_str());
 				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 15.0f, textPosition, ImColor(255, 255, 255, 255), weaponIcon.c_str());
+			}
+		}
+
+		if (angel::_settings->scoped_esp)
+		{
+			bool is_scoped;
+			ImVec2 IconPos = { Rect.x, Rect.y };
+			_proc_manager.read_memory<bool>(Entity.Pawn.Address + Offset::Pawn.isScoped, is_scoped);
+			if (is_scoped)
+			{
+				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 13.0f, ImVec2{ IconPos.x - 1, IconPos.y - 1 }, ImColor(0, 0, 0, 255), "s");
+				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 13.0f, ImVec2{ IconPos.x - 1, IconPos.y + 1 }, ImColor(0, 0, 0, 255), "s");
+				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 13.0f, ImVec2{ IconPos.x + 1, IconPos.y + 1 }, ImColor(0, 0, 0, 255), "s");
+				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 13.0f, ImVec2{ IconPos.x + 1, IconPos.y - 1 }, ImColor(0, 0, 0, 255), "s");
+				ImGui::GetBackgroundDrawList()->AddText(ImGui::GetIO().Fonts->Fonts[1], 13.0f, IconPos, ImColor(0, 200, 255, 255), "s");
 			}
 		}
 			
