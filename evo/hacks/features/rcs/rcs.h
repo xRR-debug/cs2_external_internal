@@ -43,6 +43,7 @@ namespace rcs
 			newangles.x += screen_center_x;
 			newangles.y += screen_center_y;
 			angles = newangles;
+			old_punch = aimpunch;
 		}
 		else
 		{
