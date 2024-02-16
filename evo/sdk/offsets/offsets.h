@@ -14,6 +14,7 @@ namespace Offset
 	inline DWORD InventoryServices;
 	inline DWORD PlantedC4;
 	inline DWORD InputSystem;
+	inline DWORD Sensitivity;
 
 	struct
 	{
@@ -56,7 +57,7 @@ namespace Offset
 		DWORD iFovStart = 0x214;
 		DWORD fFlags = 0x3D4;
 		DWORD bSpottedByMask = 0x1698 + 0xC;	// C_CSPlayerPawnBase::entitySpottedState + EntitySpottedState_t::bSpottedByMask
-		DWORD m_flMouseSensitivity = 0x1220;
+		DWORD m_flMouseSensitivity = 0x1278;
 	} Pawn;
 
 	struct
@@ -89,6 +90,19 @@ namespace Offset
 		DWORD HasDefuser = 0x7F8;
 		DWORD HasHelmet = 0x7F9;
 	} PlayerController;
+
+	struct
+	{
+		DWORD AttributeManager = 0x1098;		// C_AttributeContainer
+		DWORD FallbackPaintKit = 0x1548;
+		DWORD FallbackSeed = 0x154C;
+		DWORD FallbackWear = 0x1550;
+		DWORD FallbackStatTrak = 0x1554;
+		DWORD szCustomName = 0x2D0;
+
+		DWORD EntityQuality = 0x1BC;			// EconItemView::m_iEntityQuality
+		DWORD ItemIDHigh = 0x1D0;				// EconItemView::m_iItemIDHigh
+	} EconEntity;
 
 	struct
 	{
@@ -137,6 +151,7 @@ namespace Offset
 		const std::string ForceJump = "48 8D 05 ?? ?? ?? ?? 48 89 4D ?? 48 89 45 ?? 48 8D 05 ?? ?? ?? ?? 48 89 45 ?? 48 8D 05 ?? ?? ?? ?? 48 89 45 ?? 48 8D 05 ?? ?? ?? ?? 48 89 45 ?? 48 8D 05 ?? ?? ?? ?? 48 89 45 ?? 48 8D 05 ?? ?? ?? ?? 48 89 45 ?? 48 8D 05 ?? ?? ?? ?? 48 89 45 ?? 4C 6B E3";
 		const std::string PlantedC4 = "48 8B 15 ?? ?? ?? ?? FF C0 48 8D 4C 24 40";
 		const std::string InputSystem = "48 89 05 ?? ?? ?? ?? 48 8D 05";
+		const std::string dwSensitivity = "48 8B 05 ?? ?? ?? ?? 48 8B 40 ?? F3 0F 10 00 F3 0F 59 86";
 	}
 
 	bool update_offsets();
