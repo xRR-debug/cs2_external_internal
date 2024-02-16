@@ -16,9 +16,9 @@ extern "C" {
 namespace aimbot_t
 {
     inline int hotkey = VK_LBUTTON;
-    inline float AimFov = 0.f;
-    inline float Smooth = 2.0f;
-    inline Vec2 RCSScale = { 1.f, 1.f };
+    inline float aim_fov = 0.f;
+    inline float smooth = 2.0f;
+    inline bool scope_check = false;
     inline std::vector<int> hotkey_list{ VK_LBUTTON, VK_LMENU, VK_RBUTTON, VK_XBUTTON1, VK_XBUTTON2, VK_CAPITAL, VK_LSHIFT, VK_LCONTROL };
 
     inline void set_hotkey(int Index)
@@ -78,6 +78,16 @@ namespace aimbot_t
         if (local.Pawn.weapon_type == cs_weapon_type::weapon_type_taser)
             return;
 
+        if (angel::_settings->aimbot_scopecheck)
+        {
+            bool is_scoped;
+            _proc_manager.read_memory<bool>(local.Pawn.Address + Offset::Pawn.isScoped, is_scoped);
+            if (!is_scoped && local.Pawn.weapon_type == cs_weapon_type::weapon_type_sniper_rifle)
+            {
+                return;
+            }
+        }
+
         float yaw, pitch, distance, norm, length;
         Vec3 opp_pos;
         Vec2 angles{};
@@ -85,6 +95,7 @@ namespace aimbot_t
         int screen_center_y = Gui.Window.Size.y / 2;
         float target_x = 0.f;
         float target_y = 0.f;
+        float sensitivity = local.Pawn.sensitivity;
 
         opp_pos = aim_pos - local_pos;
 
@@ -95,14 +106,14 @@ namespace aimbot_t
         if (angel::_settings->rcs)
         {
             rcs::update_angles(local, angles);
-            float rad = angles.x * RCSScale.x / 180.f * M_PI;
+            float rad = angles.x * rcs::RCSScale.x / 180.f * M_PI;
             float si = sinf(rad);
             float co = cosf(rad);
 
             float z = opp_pos.z * co + distance * si;
             float d = (distance * co - opp_pos.z * si) / distance;
 
-            rad = -angles.y * RCSScale.y / 180.f * M_PI;
+            rad = -angles.y * rcs::RCSScale.y / 180.f * M_PI;
             si = sinf(rad);
             co = cosf(rad);
 
@@ -115,11 +126,11 @@ namespace aimbot_t
 
             if (angel::_settings->rcs && (local.Pawn.ShotsFired > rcs::rcs_bullet))
             {
-                AimFov = angel::_settings->rcsfov;
+                aim_fov = angel::_settings->rcsfov;
             }
             else
             {
-                AimFov = angel::_settings->aimbotfov;
+                aim_fov = angel::_settings->aimbotfov;
             }
         }
 
@@ -150,55 +161,55 @@ namespace aimbot_t
         {
             if (local.Pawn.weapon_type == cs_weapon_type::weapon_type_sniper_rifle)
             {
-                AimFov = angel::_settings->sniper_fov;
-                Smooth = angel::_settings->sniper_smooth;
+                aim_fov = angel::_settings->sniper_fov;
+                smooth = angel::_settings->sniper_smooth;
             }
             if (local.Pawn.weapon_type == cs_weapon_type::weapon_type_pistol)
             {
-                AimFov = angel::_settings->pistol_fov;
-                Smooth = angel::_settings->pistol_smooth;
+                aim_fov = angel::_settings->pistol_fov;
+                smooth = angel::_settings->pistol_smooth;
             }
             else if (angel::_settings->rcs && (local.Pawn.ShotsFired > rcs::rcs_bullet))
             {
-                AimFov = angel::_settings->rcsfov;
+                aim_fov = angel::_settings->rcsfov;
             }
             if (local.Pawn.weapon_type == cs_weapon_type::weapon_type_rifle)
             {
-                AimFov = angel::_settings->rifle_fov;
-                Smooth = angel::_settings->rifle_smooth;
+                aim_fov = angel::_settings->rifle_fov;
+                smooth = angel::_settings->rifle_smooth;
             }
             else if (angel::_settings->rcs && (local.Pawn.ShotsFired > rcs::rcs_bullet))
             {
-                AimFov = angel::_settings->rcsfov;
+                aim_fov = angel::_settings->rcsfov;
             }
             if (local.Pawn.weapon_type == cs_weapon_type::weapon_type_machinegun)
             {
-                AimFov = angel::_settings->heavysmg_fov;
-                Smooth = angel::_settings->heavysmg_smooth;
+                aim_fov = angel::_settings->heavysmg_fov;
+                smooth = angel::_settings->heavysmg_smooth;
             }
             else if (angel::_settings->rcs && (local.Pawn.ShotsFired > rcs::rcs_bullet))
             {
-                AimFov = angel::_settings->rcsfov;
+                aim_fov = angel::_settings->rcsfov;
             }
             if (local.Pawn.weapon_type == cs_weapon_type::weapon_type_submachinegun)
             {
-                AimFov = angel::_settings->heavysmg_fov;
-                Smooth = angel::_settings->heavysmg_smooth;
+                aim_fov = angel::_settings->heavysmg_fov;
+                smooth = angel::_settings->heavysmg_smooth;
             }
             else if (angel::_settings->rcs && (local.Pawn.ShotsFired > rcs::rcs_bullet))
             {
-                AimFov = angel::_settings->rcsfov;
+                aim_fov = angel::_settings->rcsfov;
             }
             if (local.Pawn.weapon_type == cs_weapon_type::weapon_type_shotgun)
             {
-                AimFov = angel::_settings->heavysmg_fov;
-                Smooth = angel::_settings->heavysmg_smooth;
+                aim_fov = angel::_settings->heavysmg_fov;
+                smooth = angel::_settings->heavysmg_smooth;
             }
         }
         else if (!angel::_settings->rcs && (local.Pawn.ShotsFired < rcs::rcs_bullet))
         {
-            AimFov = angel::_settings->aimbotfov;
-            Smooth = aimbot_t::Smooth;
+            aim_fov = angel::_settings->aimbotfov;
+            smooth = aimbot_t::smooth;
         }
 
         yaw = atan2f(opp_pos.y, opp_pos.x) * 57.295779513 - local.Pawn.ViewAngle.y;
@@ -208,24 +219,24 @@ namespace aimbot_t
         Vec2 screen_pos;
         g_game.view.WorldToScreen(Vec3(aim_pos), screen_pos);
 
-        if (norm < AimFov)
+        if (norm < aim_fov)
         {
-            if (!Smooth)
+            if (!smooth)
             {
                 _driver->MouseMove((DWORD)(target_x), (DWORD)(target_y));
                 return;
             }
 
             // Dynamic AimSmooth based on distance
-            float DistanceRatio = norm / AimFov;// Calculate the distance ratio
+            float DistanceRatio = norm / aim_fov;// Calculate the distance ratio
             float SpeedFactor = 1.0f + (1.0f - DistanceRatio); // Determine the speed factor based on the distance ratio
-            target_x /= (Smooth * SpeedFactor);
-            target_y /= (Smooth * SpeedFactor);
+            target_x /= (smooth * SpeedFactor);
+            target_y /= (smooth * SpeedFactor);
             
             if (screen_pos.x != screen_center_x)
             {
                 target_x = (screen_pos.x > screen_center_x) ? -(screen_center_x - screen_pos.x) : screen_pos.x - screen_center_x;
-                target_x /= Smooth != 0.0f ? Smooth : 1.5f;
+                target_x /= smooth != 0.0f ? smooth : 1.5f;
                 target_x = (target_x + screen_center_x > screen_center_x * 2 || target_x + screen_center_x < 0) ? 0 : target_x;
             }
 
@@ -234,7 +245,7 @@ namespace aimbot_t
                 if (screen_pos.y != screen_center_y)
                 {
                     target_y = (screen_pos.y > screen_center_y) ? -(screen_center_y - screen_pos.y) : screen_pos.y - screen_center_y;
-                    target_y /= Smooth != 0.0f ? Smooth : 1.5f;
+                    target_y /= smooth != 0.0f ? smooth : 1.5f;
                     target_y = (target_y + screen_center_y > screen_center_y * 2 || target_y + screen_center_y < 0) ? 0 : target_y;
                 }
             }
