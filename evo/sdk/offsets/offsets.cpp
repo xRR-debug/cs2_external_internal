@@ -84,6 +84,12 @@ bool Offset::update_offsets()
 
 	Offset::PlantedC4 = TempAddress - ClientDLL;
 
+	TempAddress = search_offsets(Offset::Signatures::dwSensitivity, ClientDLL);
+	if (TempAddress == 0)
+		return false;
+
+	Offset::Sensitivity = TempAddress - ClientDLL;
+
 	TempAddress = search_offsets(Offset::Signatures::InputSystem, InputDLL);
 	if (TempAddress == 0)
 		return false;
