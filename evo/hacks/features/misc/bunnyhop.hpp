@@ -25,7 +25,7 @@ namespace bunnyhop
 
 		if (space_pressed && is_inair) 
 		{
-			std::this_thread::sleep_for(std::chrono::microseconds(15625));
+			std::this_thread::sleep_for(std::chrono::microseconds(17625));
 			mouse_event(MOUSEEVENTF_WHEEL, 100, 150, 200, 250);
 		}
 		else if (space_pressed && !is_inair)
