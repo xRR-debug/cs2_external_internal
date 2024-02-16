@@ -68,6 +68,14 @@ bool CEntity::UpdatePawn(const DWORD64& PlayerPawnAddress)
 	return true;
 }
 
+bool CEntity::UpdateClientData()
+{
+	if (!this->Client.GetSensitivity())
+		return false;
+
+	return true;
+}
+
 bool PlayerController::GetMoney()
 {
 	DWORD64 MoneyServices;
@@ -81,6 +89,20 @@ bool PlayerController::GetMoney()
 		get_data_address_with_offset<int>(MoneyServices, Offset::InGameMoneyServices.TotalCashSpent, this->CashSpentTotal);
 		return true;
 	}
+}
+
+bool Client::GetSensitivity()
+{
+	DWORD64 dwSensitivity;
+	float flSensitivity;
+	_proc_manager.read_memory(g_game.get_client_dll_address() + Offset::Sensitivity, dwSensitivity);
+	if (_proc_manager.read_memory(dwSensitivity + 0x40, flSensitivity))
+	{
+		this->Sensitivity = flSensitivity;
+		return true;
+	}
+	else
+		return false;
 }
 
 bool PlayerController::GetTeamID()
@@ -136,13 +158,13 @@ bool PlayerPawn::GetSensitivity()
 bool PlayerPawn::GetWeaponName()
 {
 	DWORD64 WeaponNameAddress = 0;
-	char Buffer[64]{};
+	char Buffer[525]{};
 	
 	WeaponNameAddress = _proc_manager.trace_address(this->Address + Offset::Pawn.pClippingWeapon, { 0x10,0x20 ,0x0 });
 	if (WeaponNameAddress == 0)
 		return false;
 
-	if (!_proc_manager.read_memory(WeaponNameAddress, Buffer, 64))
+	if (!_proc_manager.read_memory(WeaponNameAddress, Buffer, 525))
 		return false;
 
 	WeaponName = std::string(Buffer);
