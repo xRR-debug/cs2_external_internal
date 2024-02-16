@@ -12,7 +12,6 @@
 #include "../utils/lazy.hpp"
 #include "../../utils/discord/discord_rpc_init.h"
 #include "../hacks/features/aimbot/mouse.hpp"
-#include "initsdl.hpp"
 
 namespace fs = std::filesystem;
 
