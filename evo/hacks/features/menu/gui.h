@@ -99,6 +99,7 @@ namespace gui
 								ImGui::SameLine(GetWindowWidth() - 33);
 								ImGui::ColorEdit4(X("###fovcolor"), reinterpret_cast<float*>(&angel::_settings->fov_circle_color), ALPHA);
 								ImGui::Checkbox(X("Only visible"), &angel::_settings->aimbot_visible_check);
+								ImGui::Checkbox(X("Scope check"), &angel::_settings->aimbot_scopecheck);
 								if (ImGui::Combo(X("Aimbot key"), &angel::_settings->aimbot_hotkey, aimbot_key_binds.data(), aimbot_key_binds.size()))
 								{
 									aimbot_t::set_hotkey(angel::_settings->aimbot_hotkey);
@@ -123,14 +124,14 @@ namespace gui
 										angel::_settings->aim_hitbox_position = BONEINDEX::pelvis;
 										break;
 									case 5:
-										angel::_settings->aim_hitbox_position = BONEINDEX::pelvis && BONEINDEX::head && BONEINDEX::neck_0 && BONEINDEX::spine_1;
+										angel::_settings->aim_hitbox_position = 13;
 										break;
 									default:
 										break;
 									}
 								}
 								ImGui::SliderFloat(X("Fov"), &angel::_settings->aimbotfov, 0, 30);
-								ImGui::SliderFloat(X("Smooth"), &aimbot_t::Smooth, 0.1f, 30);
+								ImGui::SliderFloat(X("Smooth"), &aimbot_t::smooth, 0.1f, 30);
 								ImGui::Checkbox(X("Enable rcs"), &angel::_settings->rcs);
 								if (angel::_settings->rcs)
 								{
