@@ -143,7 +143,7 @@ namespace ConfigMenu
 		triggerbot::fake_shot_delay = 10;
 		triggerbot::set_hotkey(angel::_settings->triggerbot_hotkey);
 		aimbot_t::set_hotkey(angel::_settings->aimbot_hotkey);
-		aimbot_t::RCSScale = ImVec2(1.2, 1.4);
+		rcs::RCSScale = ImVec2(1.2, 1.4);
 		rcs::rcs_bullet = 1;
 		angel::_settings->bunnyhop = false;
 		angel::_settings->work_in_spec = true;
