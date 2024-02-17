@@ -41,7 +41,7 @@ namespace Render
 
 		Vec2 CenterPoint = Gui.Window.Size / 2;
 
-		float Radius = tan(aimbot_t::AimFov / 180.f * M_PI / 2.f) / tan(LocalEntity.Pawn.Fov / 180.f * M_PI / 2.f) * Gui.Window.Size.x;
+		float Radius = tan(aimbot_t::aim_fov / 180.f * M_PI / 2.f) / tan(LocalEntity.Pawn.Fov / 180.f * M_PI / 2.f) * Gui.Window.Size.x;
 		Gui.Circle(CenterPoint, Radius, angel::_settings->fov_circle_color, 1);
 	}
 
