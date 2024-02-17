@@ -32,6 +32,7 @@ namespace angel {
 		DWORD  aim_hitbox_position = BONEINDEX::head;
 		bool aimbot_visible_check = true;
 		bool aimbot_curve = false;
+		bool aimbot_scopecheck = true;
 
 		bool rcs = false;
 
@@ -75,13 +76,14 @@ namespace angel {
 		 bool box_esp = true;
 		 bool healthbar = true;
 		 bool weapon_esp = true;
+		 bool scoped_esp = true;
 		 bool player_name = true;
 		 bool draw_fov = false;
 		 bool show_distance = false;
 		 bool esp_visible_check = true;
 		 bool filled_box = false;
 		 bool filled_vis_box = false;
-		 bool multi_color = false;
+		 bool multi_color = true;
 		 bool outLine = false;
 		 float box_rounding = 3.0;
 		 float box_alpha = 0.35;
