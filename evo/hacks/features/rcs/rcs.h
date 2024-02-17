@@ -7,6 +7,7 @@
 namespace rcs
 {
 	inline int rcs_bullet = 1;
+        inline Vec2 RCSScale = { 1.f, 1.f };
 
 	inline void update_angles(const CEntity& local, Vec2& angles)
 	{
