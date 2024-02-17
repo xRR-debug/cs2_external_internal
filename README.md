@@ -83,3 +83,9 @@
 ## Suggestions
 
 Open an [issue](https://github.com/insage1337/cs2_external_internal/issues) with the title of the suggestion you want to make.
+
+## Credits 
+
+- Thank to [CownowK](https://github.com/CowNowK/AimStar) for aimstar repository.
+- Thank to [JustasMasiulis](https://github.com/JustasMasiulis/xorstr) for xorstr repository.
+- Thank to [Dutu1337](https://github.com/dumitru1216/cs2-external-evo) for evo repository.
