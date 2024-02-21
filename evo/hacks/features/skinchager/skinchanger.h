@@ -1,7 +1,7 @@
 #pragma once
 #include "../../sdk/classes/entity.h"
 
-namespace skinChanger
+namespace skinchanger
 {
 
     int get_id(uintptr_t weapons)
