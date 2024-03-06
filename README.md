@@ -3,15 +3,15 @@
 </p>
 
 <p align="center">
-	<a href="https://github.com/insage1337/cs2_external_internal/releases/latest"><img src="https://img.shields.io/github/v/release/insage1337/cs2_external_internal?style=for-the-badge"></a>
-	<a href="https://github.com/insage1337/cs2_external_internal/releases"><img src="https://img.shields.io/github/downloads/insage1337/cs2_external_internal/total.svg?style=for-the-badge"></a>
-	<a href="https://github.com/insage1337/cs2_external_internal/graphs/contributors"><img src="https://img.shields.io/github/contributors/insage1337/cs2_external_internal?style=for-the-badge&color=red"></a>
+	<a href="https://github.com/insggg/cs2_external_internal/releases/latest"><img src="https://img.shields.io/github/v/release/insggg/cs2_external_internal?style=for-the-badge"></a>
+	<a href="https://github.com/insggg/cs2_external_internal/releases"><img src="https://img.shields.io/github/downloads/insggg/cs2_external_internal/total.svg?style=for-the-badge"></a>
+	<a href="https://github.com/insggg/cs2_external_internal/graphs/contributors"><img src="https://img.shields.io/github/contributors/insggg/cs2_external_internal?style=for-the-badge&color=red"></a>
 </p>
 
 <h1 align="center">Getting Started</h1>
 
 ## Stable Release
-1. Head over to the [releases page](https://github.com/insage1337/angeldancycs2/releases)
+1. Head over to the [releases page](https://github.com/insggg/angeldancycs2/releases)
 2. Download the latest binaries
 
 ## Building from source
@@ -72,17 +72,17 @@
 
 <details>
   <summary>In Game</summary>
-  <img src="https://raw.githubusercontent.com/insage1337/cs2_external_internal/main/screenshot.png?token=GHSAT0AAAAAACM6S2F4CCR3STALR6EBL7CUZNYJOMQ"/>
+  <img src="https://raw.githubusercontent.com/insggg/cs2_external_internal/main/screenshot.png?token=GHSAT0AAAAAACM6S2F4CCR3STALR6EBL7CUZNYJOMQ"/>
 </details>
 
 <details>
 <summary>Loader</summary>
-  <img src="https://raw.githubusercontent.com/insage1337/cs2_external_internal/main/loader%20screenshot.png?token=GHSAT0AAAAAACM6S2F4FLXMXH7XDN7FS3RIZNYJOHQ"/>
+  <img src="https://raw.githubusercontent.com/insggg/cs2_external_internal/main/loader%20screenshot.png?token=GHSAT0AAAAAACM6S2F4FLXMXH7XDN7FS3RIZNYJOHQ"/>
 </details>
  
 ## Suggestions
 
-Open an [issue](https://github.com/insage1337/cs2_external_internal/issues) with the title of the suggestion you want to make.
+Open an [issue](https://github.com/insggg/cs2_external_internal/issues) with the title of the suggestion you want to make.
 
 ## Credits 
 
