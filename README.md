@@ -77,7 +77,7 @@
 
 <details>
 <summary>Loader</summary>
-  <img src="https://raw.githubusercontent.com/xRR-debug/cs2_external_internal/main/loader%20screenshot.png?token=GHSAT0AAAAAACM6S2F4FLXMXH7XDN7FS3RIZNYJOHQ"/>
+  <img src="https://raw.githubusercontent.com/xRR-debug/cs2_external_internal/main/loader%20screen.png"/>
 </details>
  
 ## Suggestions
