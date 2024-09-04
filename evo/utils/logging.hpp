@@ -1,4 +1,5 @@
 #pragma once
+#include "../inc.hpp"
 
 #pragma region logging_console_colors
 #define FOREGROUND_WHITE		    (FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN)
@@ -26,7 +27,7 @@
 #define SEH_START try {
 #define SEH_END } catch (const std::exception& ex) {	\
 	L::PushConsoleColor(FOREGROUND_INTENSE_RED);		\
-	L::Print("[error] {}", ex.what());			\
+	L::Print(X("[error] {}"), ex.what());			\
 	L::PopConsoleColor();								\
 	SEH_CATCH }
 #pragma endregion
@@ -61,7 +62,8 @@ namespace Logging
 	void Print(const std::string_view szText, const Args_t& ... argList)
 	{
 		// format time
-		const std::string szTime = std::vformat("[{:%d-%m-%Y %X}] ", std::make_format_args(std::chrono::system_clock::now()));
+		std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+		const std::string szTime = std::vformat(X("[{:%d-%m-%Y %X}] "), std::make_format_args(now));
 
 #ifdef DEBUG_CONSOLE
 		// print to console
