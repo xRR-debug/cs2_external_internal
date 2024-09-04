@@ -26,7 +26,7 @@
 1. Run `cs2.exe`
 2. Run Run any single 64bit process. (like notepad, ms office ,etc)
 3. Run `release.exe`
-4. Chose this process. DO NOT CHOSE CS2.EXE.
+4. Chose any single 64bit process. DO NOT CHOSE CS2.EXE.
 5. If process crash do it again.
 6. Press `insert` to open menu. `end` is panic key.
    
