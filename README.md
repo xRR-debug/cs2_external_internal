@@ -55,7 +55,7 @@
 - etc
 
 #### Misc
-- Bunnyhop using mouse_event (for bhop write to console, unbind space, bind mwheelup +jump)
+- Bunnyhop
 - Cheat list
 - Team check
 - Bomb timer
